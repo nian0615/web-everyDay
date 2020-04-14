@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	let isSuccess = false;
+	function Success (){
+		console.log('成功回调函数');
+	};
+	function fail() {
+		console.log('失败回调函数');
+	}
+	function red() {
+		console.log('红色');
+	}
+	function green() {
+		console.log('绿色');
+	}
+	function yellow() {
+		console.log('黄色');
+	}
+	/*用&&符号代替传统的*/
+	/* if(isSuccess) {
+		Success()
+	} */
+	isSuccess && Success();
+	/*用三元运算符 */
+	/* if(isSuccess) {
+		Success()
+	}else{
+		fail()
+	} */
+	isSuccess ? Success():fail();
+	/* 提前结束语句 */
+/* 	function trafficLight(color) {
+	    if (color === 'red') {
+	        red();
+	    } else if (color === 'green') {
+	        green();
+	    } else {
+	        yellow();
+	    }
+	} */
+	function trafficLight(color) {
+	    if (color === 'red') return red();
+	    if (color === 'green') return green();
+	    yellow();
+	}
+	trafficLight('green')
+	
+	
+	// ---switch case
+	let age = 10;
+	function test(){
+		console.log('test方法');
+	}
+	// bad
+	if (age === 10 || age === 20 || age === 30 || age === 40) {
+	    test();
+	}
+	// good
+	switch(age) {
+	    case 10:
+	    case 20:
+	    case 30:
+	    case 40:
+	        test();
+	}
+	</script>
+</html>
